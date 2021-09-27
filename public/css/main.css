@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  background-image: url("https://www.infobae.com/new-resizer/hSwJP-4mZjQKhMLmMcd1DepNEGM=/1200x900/filters:format(jpg):quality(85)//s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/05/20114815/vinos-41.jpg");
+  background-position: center;
+  background-size: 130%;
+  position: relative;
+  animation: movimiento 15s infinite linear alternate;
+}
+
+@keyframes movimiento {
+  from {
+    background-position: bottom left;
+  }
+  to {
+    background-position: top right;
+  }
+}
+
+.img-logo {
+  width: 40px;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    background-repeat: no-repeat;
+    background-size: 130% 130%;
+  }
+
+  .vh-50 {
+    height: 65vh !important;
+  }
+}
+
+.active-menu{
+  transform: translateX(0) !important;
+}
+
+@media screen and (max-width: 767px) {
+  #nav-menu > ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 35%;
+    display: block !important;
+    transform: translateX(100%);
+    transition: all 500ms ease;
+    z-index: 10000;
+    background-color: var(--warning);
+  }
+
+  #nav-menu > ul > li {
+    height: 16.67%;
+    color: #000 !important;
+  }
+
+  #nav-menu > ul > li > a {
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  #btn-menu{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    z-index: 9000;
+  }
+
+  .media > img {
+    width: 100%;
+  }
+}
+
+.vh-50 {
+  height: 50vmin;
+}
+
+.social {
+  position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+  left: 0; /* Establecemos la barra en la izquierda */
+  top: 200px; /* Bajamos la barra 200px de arriba a abajo */
+  z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+@media screen and (max-width: 650px) {
+  .social {
+    top: auto;
+    bottom: 0;
+  }
+
+  .social ul {
+    display: flex;
+    margin: 0;
+  }
+}
+
+.social ul {
+  list-style: none;
+}
+
+.social ul li a {
+  display: inline-block;
+  color: #fff;
+  background: #000;
+  padding: 10px 15px;
+  text-decoration: none;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; /* Establecemos una transición a todas las propiedades */
+}
+
+.social ul li .icon-facebook {
+  background: #3b5998;
+} /* Establecemos los colores de cada red social, aprovechando su class */
+.social ul li .icon-twitter {
+  background: #00abf0;
+}
+.social ul li .icon-googleplus {
+  background: #d95232;
+}
+.social ul li .icon-pinterest {
+  background: #ae181f;
+}
+.social ul li .icon-mail {
+  background: #666666;
+}
+
+.social ul li a:hover {
+  background: #000; /* Cambiamos el fondo cuando el usuario pase el mouse */
+  padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+}
+
+.card {
+  transition-duration: 0.6s;
+  clip-path: polygon(
+    50% 0,
+    100% 0,
+    100% 50%,
+    100% 100%,
+    50% 100%,
+    0 100%,
+    0 50%,
+    0 0%
+  );
+}
+.card-efecto:hover .card {
+  clip-path: polygon(
+    50% 0,
+    50% 0,
+    100% 50%,
+    100% 50%,
+    50% 100%,
+    50% 100%,
+    0 50%,
+    0 50%
+  );
+}
+
+.card-img-overlay {
+  transition-duration: 0.6s;
+}
+.card-efecto:hover .card-img-overlay {
+  transform: scale(0.9);
+}
+
+.carousel-weston-middle {
+  top: 35%;
+}

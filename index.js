@@ -13,6 +13,7 @@ app.get('/', (req, res)=>{
     res.sendFile(path.resolve('index.html'));    
 });
 
-app.listen(8000, ()=>{
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, ()=>{
     console.log('Funcionando!');
 });
